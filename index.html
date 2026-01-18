@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Student Portal | Full Scale</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div id="login-page" class="auth-screen">
+        <div class="login-container">
+            <div class="login-logo">
+                <img src="https://via.placeholder.com/150" alt="University Logo">
+            </div>
+            <form id="login-form">
+                <div class="input-block">
+                    <label>Reg. Number</label>
+                    <input type="text" id="reg-input" placeholder="Reg. Number" required>
+                </div>
+                <div class="input-block">
+                    <label>Password</label>
+                    <div class="pass-wrapper">
+                        <input type="password" id="password-input" placeholder="Password" required>
+                        <i class='bx bx-show'></i>
+                    </div>
+                </div>
+                <div class="login-options">
+                    <label><input type="checkbox"> Remember me</label>
+                </div>
+                <button type="submit" class="btn-login">Log In</button>
+                <div class="forgot-link">
+                    <a href="#">Forgot your password?</a>
+                </div>
+            </form>
+            <div class="login-footer">
+                2026 © Designed by DSL Systems
+            </div>
+        </div>
+    </div>
+
+    <div id="portal-page" class="hidden">
+        <header class="main-header">
+            <button id="menu-toggle"><i class='bx bx-menu'></i></button>
+            <div class="header-user">
+                <img src="https://via.placeholder.com/45" class="user-img">
+            </div>
+        </header>
+
+        <div class="dashboard-banner">
+            <h2>Dashboard</h2>
+        </div>
+
+        <div class="layout-body">
+            <aside class="sidebar" id="sidebar">
+                <nav class="side-nav">
+                    <p class="section-tag">DASHBOARD</p>
+                    <button class="side-item active"><i class='bx bxs-user'></i> Personal Profile</button>
+                    
+                    <p class="section-tag">ACADEMICS</p>
+                    <button class="side-item"><i class='bx bxs-spreadsheet'></i> Registration <i class='bx bx-chevron-down' style="margin-left:auto"></i></button>
+                    <button class="side-item"><i class='bx bx-transfer-alt'></i> Academic Requisition</button>
+                    <button class="side-item"><i class='bx bxs-movie-play'></i> Course Evaluation</button>
+                    <button class="side-item"><i class='bx bxs-lock-open'></i> Clearance Request</button>
+                    <button class="side-item"><i class='bx bxs-registered'></i> Student Entry Survey</button>
+
+                    <p class="section-tag">FINANCIALS</p>
+                    <button class="side-item"><i class='bx bxs-bank'></i> Fee Structure</button>
+                    <button class="side-item"><i class='bx bxs-spreadsheet'></i> Household Statement</button>
+                    <button class="side-item"><i class='bx bxs-spreadsheet'></i> Accomodation Statement</button>
+                    <button class="side-item"><i class='bx bxs-folder-open'></i> Receipts</button>
+
+                    <p class="section-tag">ACCOMMODATION</p>
+                    <button class="side-item"><i class='bx bxs-bed'></i> Hostel Booking</button>
+
+                    <p class="section-tag">EXAMINATION</p>
+                    <button class="side-item"><i class='bx bxs-cloud-download'></i> Transcript</button>
+
+                    <p class="section-tag">CLUBS AND SOCIETIES</p>
+                    <button class="side-item"><i class='bx bxs-download'></i> My Clubs and Societies</button>
+                    <button class="side-item"><i class='bx bxs-cloud-upload'></i> Club Requisitions</button>
+
+                    <p class="section-tag">GUIDANCE & COUNSELLING</p>
+                    <button class="side-item"><i class='bx bxs-user-rectangle'></i> Book Session</button>
+                    <button class="side-item"><i class='bx bxs-file-blank'></i> Read Counsellor Articles</button>
+
+                    <p class="section-tag">SETTINGS</p>
+                    <button class="side-item"><i class='bx bxs-cog'></i> Change Password</button>
+                    <button id="logout-btn" class="side-item logout-red"><i class='bx bx-log-out'></i> Logout</button>
+                </nav>
+            </aside>
+
+            <main class="page-content">
+                <div class="portal-card">
+                    <div class="card-title">Basic information</div>
+                    <div class="card-inner center">
+                        <div class="profile-frame">
+                            <img src="https://via.placeholder.com/130" alt="Student Photo">
+                        </div>
+                        <div class="field-box"><label>Reg. No</label><p id="display-reg" class="val gold"></p></div>
+                        <div class="field-box"><label>Name</label><p id="display-name" class="val gold"></p></div>
+                        <div class="field-box"><label>ID No</label><p class="val"></p></div>
+                        <div class="field-box"><label>Gender</label><p class="val"></p></div>
+                        <div class="field-box"><label>Address</label><p class="val"></p></div>
+                        <div class="field-box"><label>Email</label><p class="val gold"></p></div>
+                        <div class="field-box"><label>Date Of Birth</label><p class="val gold"></p></div>
+                        <div class="field-box"><label>Campus</label><p class="val gold">100</p></div>
+                        <button class="btn-teal">Get Academic Calendar</button>
+                    </div>
+                </div>
+
+                <div class="portal-card">
+                    <div class="card-title">Academic Information</div>
+                    <div class="card-inner">
+                        <div class="field-box"><label>Current Programme</label><p class="val gold"></p></div>
+                        <div class="field-box"><label>Attempted Units</label><p class="val gold"></p></div>
+                        <div class="field-box"><label>Registered Units</label><p class="val gold"></p></div>
+                    </div>
+                </div>
+
+                <div class="portal-card">
+                    <div class="card-title">Fee Payment</div>
+                    <div class="card-inner">
+                        <div class="field-box"><label>Fee Balance</label><p class="val gold"></p></div>
+                        <div class="field-box"><label>Household Amount</label><p class="val gold"></p></div>
+                        <button class="btn-teal">Make Payment</button>
+                        <a href="#" class="paid-link">Already Paid?</a>
+                    </div>
+                </div>
+
+                <div class="portal-card">
+                    <div class="card-title">Important Documents</div>
+                    <div class="table-scroll">
+                        <table class="data-table">
+                            <thead><tr><th>#</th><th>File Name</th><th>Remarks</th><th>Action</th></tr></thead>
+                            <tbody><tr><td colspan="4" class="no-data">No Internal Memos found</td></tr></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="portal-card">
+                    <div class="card-title">Quick Links</div>
+                    <div class="card-inner">
+                        <ul class="q-links">
+                            <li><a href="#"><i class='bx bx-link-alt'></i> Go to E-Learning</a></li>
+                            <li><a href="#"><i class='bx bx-link-alt'></i> University Website</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <footer class="portal-foot">
+                    2026 © Designed by <span class="blue">DSL Systems</span>
+                </footer>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

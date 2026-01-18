@@ -1,0 +1,85 @@
+:root {
+    --eg-brown: #B59A5B;
+    --eg-green: #00A651;
+    --eg-teal: #1BBC9B;
+    --eg-gold-text: #8a7310;
+    --eg-bg: #F0F4F7;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Helvetica, sans-serif; }
+body { background: var(--eg-bg); overflow-x: hidden; }
+.hidden { display: none; }
+
+/* 1. FULL SCALE LOGIN */
+.auth-screen {
+    height: 100vh;
+    background: linear-gradient(180deg, var(--eg-brown) 0%, #1a3c26 100%);
+    display: flex; justify-content: center; align-items: center; padding: 15px;
+}
+.login-container { background: #fff; width: 100%; max-width: 400px; border-radius: 4px; box-shadow: 0 15px 35px rgba(0,0,0,0.4); overflow: hidden; }
+.login-logo { padding: 40px 20px; text-align: center; }
+#login-form { padding: 0 25px 30px; }
+.input-block { margin-bottom: 20px; }
+.input-block label { display: block; font-weight: 800; font-size: 15px; margin-bottom: 8px; }
+.input-block input { width: 100%; padding: 14px; border: 1px solid #ccc; border-radius: 4px; font-size: 16px; }
+.pass-wrapper { position: relative; }
+.pass-wrapper i { position: absolute; right: 15px; top: 15px; color: #777; font-size: 20px; }
+.btn-login { width: 100%; padding: 15px; background: #3498db; color: #fff; border: none; font-size: 18px; font-weight: bold; border-radius: 4px; cursor: pointer; margin-top: 10px; }
+.login-footer { background: #EE1D23; color: #fff; text-align: center; padding: 12px; font-size: 12px; }
+
+/* 2. MAIN HEADER */
+.main-header { background: var(--eg-brown); height: 65px; display: flex; align-items: center; justify-content: space-between; padding: 0 15px; position: sticky; top: 0; z-index: 1001; }
+#menu-toggle { background: none; border: none; color: #fff; font-size: 35px; cursor: pointer; }
+.user-img { width: 45px; height: 45px; border-radius: 50%; border: 2px solid #fff; }
+
+.dashboard-banner { background: #fff; padding: 18px 20px; border-bottom: 1px solid #ddd; }
+.dashboard-banner h2 { font-size: 22px; color: #333; font-weight: 600; }
+
+/* 3. SIDEBAR DRAWER */
+.sidebar { 
+    position: fixed; top: 65px; left: -100%; width: 290px; height: calc(100vh - 65px); 
+    background: var(--eg-green); transition: 0.3s; z-index: 1000; overflow-y: auto; 
+}
+.sidebar.active { left: 0; }
+.section-tag { color: #a5f3c5; font-size: 12px; font-weight: bold; padding: 20px 20px 8px; }
+.side-item { width: 100%; background: none; border: none; color: #fff; text-align: left; padding: 15px 20px; display: flex; align-items: center; gap: 15px; font-size: 15px; cursor: pointer; }
+.side-item.active, .side-item:hover { background: rgba(0,0,0,0.15); }
+.logout-red { border-top: 1px solid rgba(255,255,255,0.1); color: #ffcccc; margin-top: 10px; }
+
+/* 4. DASHBOARD CONTENT - SCALE FIX */
+.page-content { padding: 15px; width: 100%; }
+.portal-card { background: #fff; border-radius: 4px; margin-bottom: 20px; box-shadow: 0 3px 6px rgba(0,0,0,0.08); width: 100%; }
+.card-title { background: var(--eg-brown); color: #fff; padding: 15px; font-weight: bold; font-size: 19px; }
+.card-inner { padding: 25px 15px; }
+.center { text-align: center; }
+
+.profile-frame { width: 140px; height: 140px; border-radius: 50%; border: 4px solid #3498db; margin: 0 auto 25px; overflow: hidden; }
+.profile-frame img { width: 100%; height: 100%; object-fit: cover; }
+
+.field-box { margin-bottom: 18px; border-bottom: 1px dotted #ddd; padding-bottom: 8px; text-align: left; }
+.field-box label { display: block; font-weight: 800; font-size: 16px; color: #222; margin-bottom: 5px; }
+.val { font-size: 16px; font-weight: 600; min-height: 1.2em; }
+.gold { color: var(--eg-gold-text); }
+
+.btn-teal { width: 100%; padding: 16px; background: var(--eg-teal); color: #fff; border: none; border-radius: 4px; font-weight: bold; font-size: 17px; cursor: pointer; margin-top: 10px; }
+.paid-link { display: block; color: #3498db; font-size: 14px; margin-top: 12px; text-decoration: none; }
+
+/* 5. DATA TABLE */
+.table-scroll { overflow-x: auto; width: 100%; }
+.data-table { width: 100%; border-collapse: collapse; min-width: 450px; }
+.data-table th { background: #000; color: #fff; padding: 15px; text-align: left; font-size: 14px; }
+.no-data { text-align: center; padding: 50px; color: #ff3333; font-weight: bold; font-size: 16px; }
+
+/* 6. LINKS & FOOTER */
+.q-links { list-style: none; }
+.q-links a { display: flex; align-items: center; gap: 10px; color: #3498db; text-decoration: none; font-size: 16px; padding: 10px 0; }
+.portal-foot { text-align: center; padding: 40px 10px; color: #888; font-size: 13px; }
+.blue { color: #3498db; }
+
+/* RESPONSIVE SCALING */
+@media (max-width: 768px) {
+    .page-content { padding: 10px; }
+    .card-title { font-size: 17px; }
+    .field-box label { font-size: 15px; }
+    .sidebar { width: 85%; }
+}
